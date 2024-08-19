@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Application d'Audit 6S</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body
+        class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white"
+    >
+        <div
+            class="min-h-screen flex flex-col items-center justify-center px-6 py-8"
+        >
+            <header class="w-full max-w-3xl mx-auto text-center mb-8">
+                <h1 class="text-4xl font-bold tracking-wide text-teal-400 mb-4">
+                    EQOTA Audit 6S
+                </h1>
+                <button
+                    id="toggle-mode"
+                    class="px-4 py-2 bg-gradient-to-r from-teal-400 to-purple-600 text-white font-semibold rounded-lg shadow-lg transition hover:from-teal-500 hover:to-purple-700"
+                >
+                    Switch to Light Mode
+                </button>
+            </header>
+
+            <main
+                id="app"
+                class="w-full max-w-3xl glass p-8 rounded-lg shadow-2xl space-y-6"
+            >
+                <!-- Zone and Observation -->
+                <section class="space-y-4">
+                    <div>
+                        <label
+                            for="zone"
+                            class="block text-lg font-semibold text-teal-400"
+                            >Zone/Site</label
+                        >
+                        <input
+                            type="text"
+                            id="zone"
+                            class="w-full mt-2 p-4 bg-transparent border border-teal-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent placeholder-gray-400"
+                            placeholder="Entrez la zone/site"
+                        />
+                    </div>
+                    <div>
+                        <label
+                            for="observation"
+                            class="block text-lg font-semibold text-teal-400"
+                            >Observation</label
+                        >
+                        <textarea
+                            id="observation"
+                            rows="4"
+                            class="w-full mt-2 p-4 bg-transparent border border-teal-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent placeholder-gray-400"
+                            placeholder="Entrez vos observations ici"
+                        ></textarea>
+                    </div>
+                </section>
+
+                <!-- Dynamic Criteria Sections -->
+                <section id="criteria-container" class="space-y-8">
+                    <!-- Dynamic sections for each S will be added here -->
+                </section>
+
+                <!-- Buttons -->
+                <div class="flex justify-end items-center">
+                    <button
+                        id="generate-pdf"
+                        class="px-4 py-2 bg-gradient-to-r from-teal-400 to-purple-600 text-white font-bold text-lg rounded-lg shadow-lg transition hover:from-teal-500 hover:to-purple-700"
+                    >
+                        Exporter en PDF
+                    </button>
+                </div>
+            </main>
+        </div>
+
+        <table class="hidden" id="sortTable">
+            <thead class="h-10">
+                <tr>
+                    <th>SORT</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Donna</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Janice</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.27/jspdf.plugin.autotable.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
